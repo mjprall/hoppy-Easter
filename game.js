@@ -9,7 +9,12 @@ const LETTER_COLORS = [
 let currentIndex = 0;
 let gameComplete = false;
 let hardMoveInterval = null;
-const HARD_MOVE_INTERVAL_MS = 1500;
+const HARD_BASE_INTERVAL_MS = 1500;
+const HARD_MIN_INTERVAL_MS  = 300;
+
+function hardIntervalMs() {
+  return Math.max(HARD_MIN_INTERVAL_MS, HARD_BASE_INTERVAL_MS - currentIndex * 100);
+}
 
 const egg             = document.getElementById("egg");
 const banner          = document.getElementById("banner-letters");
@@ -48,10 +53,10 @@ function moveEggRandom() {
 
 // ── Hard mode: start/stop auto-movement interval ───────────────
 function startHardMode() {
-  if (hardMoveInterval) return;
+  stopHardMode();
   hardMoveInterval = setInterval(() => {
     if (!gameComplete) moveEggRandom();
-  }, HARD_MOVE_INTERVAL_MS);
+  }, hardIntervalMs());
 }
 
 function stopHardMode() {
@@ -125,6 +130,7 @@ egg.addEventListener("click", () => {
     triggerWin();
   } else {
     moveEggRandom();
+    if (hardCheckbox.checked) startHardMode();
   }
 });
 
