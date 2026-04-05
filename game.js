@@ -95,6 +95,8 @@ function triggerWin() {
 egg.addEventListener("click", () => {
   if (gameComplete) return;
 
+  if (currentIndex === 0) hint.classList.add("hidden");
+
   addLetter(currentIndex);
   currentIndex++;
 
