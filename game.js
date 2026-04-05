@@ -8,13 +8,17 @@ const LETTER_COLORS = [
 
 let currentIndex = 0;
 let gameComplete = false;
+let hardMoveInterval = null;
+const HARD_MOVE_INTERVAL_MS = 1500;
 
-const egg         = document.getElementById("egg");
-const banner      = document.getElementById("banner-letters");
-const placeholder = document.getElementById("banner-placeholder");
-const bunny       = document.getElementById("bunny");
-const celebration = document.getElementById("celebration");
-const hint        = document.getElementById("hint");
+const egg             = document.getElementById("egg");
+const banner          = document.getElementById("banner-letters");
+const placeholder     = document.getElementById("banner-placeholder");
+const bunny           = document.getElementById("bunny");
+const celebration     = document.getElementById("celebration");
+const hint            = document.getElementById("hint");
+const difficultyToggle = document.getElementById("difficulty-toggle");
+const hardCheckbox    = document.getElementById("hard-mode-checkbox");
 
 // ── Initial egg placement ──────────────────────────────────────
 function placeEggCenter() {
@@ -40,6 +44,21 @@ function moveEggRandom() {
 
   egg.style.left = Math.round(x) + "px";
   egg.style.top  = Math.round(y) + "px";
+}
+
+// ── Hard mode: start/stop auto-movement interval ───────────────
+function startHardMode() {
+  if (hardMoveInterval) return;
+  hardMoveInterval = setInterval(() => {
+    if (!gameComplete) moveEggRandom();
+  }, HARD_MOVE_INTERVAL_MS);
+}
+
+function stopHardMode() {
+  if (hardMoveInterval) {
+    clearInterval(hardMoveInterval);
+    hardMoveInterval = null;
+  }
 }
 
 // ── Add letter to banner ───────────────────────────────────────
@@ -80,8 +99,10 @@ function spawnConfetti() {
 // ── Trigger win sequence ───────────────────────────────────────
 function triggerWin() {
   gameComplete = true;
+  stopHardMode();
   egg.classList.add("hidden");
   hint.classList.add("hidden");
+  difficultyToggle.classList.add("hidden");
 
   spawnConfetti();
 
@@ -104,6 +125,16 @@ egg.addEventListener("click", () => {
     triggerWin();
   } else {
     moveEggRandom();
+  }
+});
+
+// ── Difficulty toggle handler ──────────────────────────────────
+hardCheckbox.addEventListener("change", () => {
+  if (gameComplete) return;
+  if (hardCheckbox.checked) {
+    startHardMode();
+  } else {
+    stopHardMode();
   }
 });
 
