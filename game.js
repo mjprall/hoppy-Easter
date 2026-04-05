@@ -9,12 +9,12 @@ const LETTER_COLORS = [
 let currentIndex = 0;
 let gameComplete = false;
 
-const egg        = document.getElementById("egg");
-const banner     = document.getElementById("banner-letters");
-const placeholder= document.getElementById("banner-placeholder");
-const bunny      = document.getElementById("bunny");
-const celebration= document.getElementById("celebration");
-const hint       = document.getElementById("hint");
+const egg         = document.getElementById("egg");
+const banner      = document.getElementById("banner-letters");
+const placeholder = document.getElementById("banner-placeholder");
+const bunny       = document.getElementById("bunny");
+const celebration = document.getElementById("celebration");
+const hint        = document.getElementById("hint");
 
 // ── Initial egg placement ──────────────────────────────────────
 function placeEggCenter() {
