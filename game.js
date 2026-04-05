@@ -10,7 +10,7 @@ let currentIndex = 0;
 let gameComplete = false;
 let hardMoveInterval = null;
 const HARD_BASE_INTERVAL_MS = 1500;
-const HARD_MIN_INTERVAL_MS  = 300;
+const HARD_MIN_INTERVAL_MS  = 360;
 
 function hardIntervalMs() {
   return Math.max(HARD_MIN_INTERVAL_MS, HARD_BASE_INTERVAL_MS - currentIndex * 100);
