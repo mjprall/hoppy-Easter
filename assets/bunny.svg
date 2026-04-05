@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" width="120" height="160">
+  <!-- Left ear -->
+  <ellipse cx="38" cy="34" rx="10" ry="28" fill="#f5f5f5" stroke="#ddd" stroke-width="1.5"
+           transform="rotate(-12, 38, 50)"/>
+  <ellipse cx="38" cy="34" rx="5" ry="20" fill="#FFB6C1"
+           transform="rotate(-12, 38, 50)"/>
+  <!-- Right ear -->
+  <ellipse cx="78" cy="34" rx="10" ry="28" fill="#f5f5f5" stroke="#ddd" stroke-width="1.5"
+           transform="rotate(12, 78, 50)"/>
+  <ellipse cx="78" cy="34" rx="5" ry="20" fill="#FFB6C1"
+           transform="rotate(12, 78, 50)"/>
+  <!-- Body -->
+  <ellipse cx="58" cy="118" rx="34" ry="38" fill="#f5f5f5" stroke="#ddd" stroke-width="1.5"/>
+  <!-- Head -->
+  <circle cx="58" cy="76" r="26" fill="#f5f5f5" stroke="#ddd" stroke-width="1.5"/>
+  <!-- Eyes -->
+  <circle cx="48" cy="71" r="4" fill="#222"/>
+  <circle cx="68" cy="71" r="4" fill="#222"/>
+  <!-- Eye shine -->
+  <circle cx="50" cy="69" r="1.5" fill="#fff"/>
+  <circle cx="70" cy="69" r="1.5" fill="#fff"/>
+  <!-- Nose -->
+  <ellipse cx="58" cy="82" rx="4" ry="3" fill="#FF69B4"/>
+  <!-- Mouth -->
+  <path d="M54,85 Q58,91 62,85" fill="none" stroke="#ccc" stroke-width="1.5"/>
+  <!-- Whiskers left -->
+  <line x1="30" y1="81" x2="52" y2="83" stroke="#bbb" stroke-width="1"/>
+  <line x1="30" y1="85" x2="52" y2="85" stroke="#bbb" stroke-width="1"/>
+  <!-- Whiskers right -->
+  <line x1="64" y1="83" x2="86" y2="81" stroke="#bbb" stroke-width="1"/>
+  <line x1="64" y1="85" x2="86" y2="85" stroke="#bbb" stroke-width="1"/>
+  <!-- Front legs -->
+  <ellipse cx="42" cy="146" rx="10" ry="14" fill="#f5f5f5" stroke="#ddd" stroke-width="1.5"
+           transform="rotate(-15, 42, 140)"/>
+  <ellipse cx="74" cy="146" rx="10" ry="14" fill="#f5f5f5" stroke="#ddd" stroke-width="1.5"
+           transform="rotate(15, 74, 140)"/>
+  <!-- Tail -->
+  <circle cx="88" cy="108" r="10" fill="#fff" stroke="#ddd" stroke-width="1"/>
+  <!-- Easter basket detail (little bow) -->
+  <path d="M48,102 Q58,96 68,102" fill="none" stroke="#FF69B4" stroke-width="2.5"/>
+</svg>

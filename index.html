@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hoppy Easter!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Banner ─────────────────────────────────────────── -->
+  <header id="banner" aria-label="Collected letters">
+    <span id="banner-placeholder">Click the egg to reveal the message!</span>
+    <span id="banner-letters" aria-live="polite"></span>
+  </header>
+
+  <!-- ── Easter Egg ─────────────────────────────────────── -->
+  <img
+    id="egg"
+    src="assets/egg.svg"
+    alt="Easter Egg – click me!"
+    title="Click me!"
+    draggable="false"
+  />
+
+  <!-- ── Hint ───────────────────────────────────────────── -->
+  <p id="hint">🐣 Click the egg to collect the letters!</p>
+
+  <!-- ── Bunny (hidden until win) ───────────────────────── -->
+  <img
+    id="bunny"
+    src="assets/bunny.svg"
+    alt="Easter Bunny hopping across the screen"
+    draggable="false"
+  />
+
+  <!-- ── Celebration overlay ────────────────────────────── -->
+  <div id="celebration" role="status" aria-live="assertive">
+    <p>🐰&nbsp;Hoppy Easter!&nbsp;🥚</p>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
